@@ -1,0 +1,199 @@
+/* Reset untuk memastikan margin dan padding awal */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column; /* Membuat header berada di atas */
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+/* Gaya untuk menu navigasi */
+header {
+  width: 100%;
+  background-color: #3d8025;
+  padding: 10px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.menu a:hover {
+  background-color: #8b5e3c;
+}
+
+/* Gaya untuk kontainer utama */
+.container {
+  display: flex;
+  width: 100vw; /* Menggunakan seluruh lebar layar */
+  min-height: calc(100vh - 60px); /* Menyesuaikan dengan tinggi header */
+  border: 4px solid #8b5e3c;
+  background-color: #fff;
+}
+
+.left-panel, .right-panel {
+  flex: 1;
+  padding: 50px; /* Memberikan ruang ekstra */
+}
+
+.left-panel {
+  background-color: #e4f4e4;
+  text-align: center;
+}
+
+.left-panel h1 {
+  font-size: 48px; /* Memperbesar judul */
+  font-weight: bold;
+  color: #3d8025;
+}
+
+.left-panel p {
+  margin: 30px 0;
+  font-size: 24px; /* Memperbesar teks */
+}
+
+.author {
+  margin: 40px 0;
+}
+
+.author p {
+  margin: 10px 0;
+  font-size: 24px; /* Memperbesar teks */
+}
+
+.author .name {
+  background-color: #8b5e3c;
+  color: #fff;
+  padding: 15px 25px; /* Memperbesar tombol */
+  border-radius: 10px;
+  font-size: 20px; /* Memperbesar teks */
+}
+
+.recycle-logo {
+  width: 200px; /* Memperbesar gambar logo */
+  margin-top: 40px;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.tagline {
+  font-size: 48px; /* Memperbesar teks */
+  font-weight: bold;
+  color: #333;
+}
+
+.decoration {
+  margin-top: 40px;
+  width: 70%; /* Memperbesar dekorasi */
+  height: 200px;
+  background: url('branch-decoration.png') no-repeat center;
+  background-size: contain;
+}
+/* Slider Container */
+.slider {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  height: 500px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Slides Wrapper */
+.slides {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+/* Individual Slide */
+.slide {
+  position: absolute;
+  width: 80%; /* Lebar setiap slide */
+  height: 80%; /* Tinggi setiap slide */
+  top: 10%; /* Jarak dari atas */
+  left: 10%; /* Jarak dari kiri */
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0; /* Slide tersembunyi secara default */
+  transform: scale(0.8); /* Slide lebih kecil */
+  z-index: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Slide yang Aktif */
+.slide.active {
+  opacity: 1; /* Tampilkan slide aktif */
+  transform: scale(1); /* Slide ukuran penuh */
+  z-index: 1;
+}
+
+/* Tombol Navigasi */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
